@@ -1,3 +1,3 @@
 # SQL-Server
 
-Work in progress
+https://www.udemy.com/home/my-courses/learning/
