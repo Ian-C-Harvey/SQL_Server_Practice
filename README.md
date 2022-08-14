@@ -1,7 +1,7 @@
 # SQL-Server
 
 # Info
-All anwsers to the practice questions are based off of what I learned in the course, I do not check solutions. 
+All anwsers to the practice questions are based off of what I learned in the course, I do not check solutions. The course creator said he using common interview questions.
 
 The course uses Adventure Works DB.
 
