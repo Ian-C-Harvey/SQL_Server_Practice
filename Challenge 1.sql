@@ -27,3 +27,4 @@ SELECT
 [PurchaseOrderDetail].[LineTotal], [PurchaseOrderHeader].[OrderDate], 
 [Product].[Name], [ProductSubcategory].[Name], [ProductCategory].[Name]
 FROM [AdventureWorks2019].[Purchasing].[PurchaseOrderDetail]
+...
