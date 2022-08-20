@@ -1,9 +1,9 @@
 /* Use Columns: PurchaseOrderID, PurchaseOrderDetailID, OrderQty, UnitPrice, LineTotal, OrderDate
-Requirement for the new “OrderSizeCategory” to be calculated:
+Requirement for the new “OrderSizeCategory” to be calculated: (CASE WHEN)
   OrderQty > 500, “Large”
   OrderQty > 50 but <= 500, “Medium”
   else "Small”
-Shorten product name and subcategory and if they are null return "None". (COALESCE)
+Shorten product name and subcategory and if they are null return "None". COALESCE()
 Date criteria is the month of December. MONTH()
 Purchasing.PurchaseOrderDetail & Purchasing.PurchaseOrderHeader should match when joining. (Inner Join)
 Production.Product & Purchasing.PurchaseOrderDetail should match when joining. (Inner Join)
