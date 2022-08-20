@@ -3,7 +3,7 @@ Requirement for the new “OrderSizeCategory” to be calculated:
   OrderQty > 500, “Large”
   OrderQty > 50 but <= 500, “Medium”
   else "Small”
-Shorten product name and subcategory and if they are null return "None".
+Shorten product name and subcategory and if they are null return "None". (COALESCE)
 Date criteria is the month of December. MONTH()
 Purchasing.PurchaseOrderDetail & Purchasing.PurchaseOrderHeader should match when joining. (Inner Join)
 Production.Product & Purchasing.PurchaseOrderDetail should match when joining. (Inner Join)
