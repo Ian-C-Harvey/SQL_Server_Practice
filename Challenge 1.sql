@@ -20,3 +20,10 @@ SQL Order of Operations: 
 FROM, JOIN, WHERE, GROUP BY, HAVING, SELECT, ORDER BY 
 PurchaseOrderDetail is going to be the FROM table.
 *\
+
+SELECT 
+[PurchaseOrderDetail].[PurchaseOrderID], [PurchaseOrderDetail].[PurchaseOrderDetailID], 
+[PurchaseOrderDetail].[OrderQty], [PurchaseOrderDetail].[UnitPrice], 
+[PurchaseOrderDetail].[LineTotal], [PurchaseOrderHeader].[OrderDate], 
+[Product].[Name], [ProductSubcategory].[Name], [ProductCategory].[Name]
+FROM [AdventureWorks2019].[Purchasing].[PurchaseOrderDetail]
