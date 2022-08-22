@@ -18,7 +18,7 @@ Data dictonary for Adventure Works DB:
 https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-2008/ms124438(v=sql.100)?redirectedfrom=MSDN
 SQL Order of Operations: 
 FROM, JOIN, WHERE, GROUP BY, HAVING, SELECT, ORDER BY 
-PurchaseOrderDetail is going to be the FROM table.
+I assuming all columns mentioned in the question need to be in the output.
 *\
 
 SELECT 
