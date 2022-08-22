@@ -18,13 +18,23 @@ Data dictonary for Adventure Works DB:
 https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-2008/ms124438(v=sql.100)?redirectedfrom=MSDN
 SQL Order of Operations: 
 FROM, JOIN, WHERE, GROUP BY, HAVING, SELECT, ORDER BY 
-I assuming all columns mentioned in the question need to be in the output.
+I assume all columns mentioned in the question need to be in the output.
 *\
 
-SELECT 
-[PurchaseOrderDetail].[PurchaseOrderID], [PurchaseOrderDetail].[PurchaseOrderDetailID], 
-[PurchaseOrderDetail].[OrderQty], [PurchaseOrderDetail].[UnitPrice], 
-[PurchaseOrderDetail].[LineTotal], [PurchaseOrderHeader].[OrderDate], 
-[Product].[Name], [ProductSubcategory].[Name], [ProductCategory].[Name]
+SELECT TOP (1000) 
+[PurchaseOrderDetail].[PurchaseOrderID], 
+[PurchaseOrderDetail].[PurchaseOrderDetailID], 
+[PurchaseOrderDetail].[OrderQty], 
+[PurchaseOrderDetail].[UnitPrice], 
+[PurchaseOrderDetail].[LineTotal], 
+"orderhead".[OrderDate], 
+"Product".[Name], 
+"Productsub".[Name],
+"productcag".[Name]
 FROM [AdventureWorks2019].[Purchasing].[PurchaseOrderDetail]
-...
+
+-- Joins
+INNER JOIN [Purchasing].[PurchaseOrderHeader] AS "Orderhead" ON [PurchaseOrderDetail].[PurchaseOrderID] = "Orderhead".[PurchaseOrderID]
+INNER JOIN [Production].[Product] AS "Product" ON [PurchaseOrderDetail].[ProductID] = "Product".[ProductID]
+LEFT Outer Join [Production].[ProductSubcategory] AS "Productsub" ON "Productsub".ProductSubcategoryID = "Product".[ProductID]
+RIGHT OUTER JOIN [Production].[ProductCategory] AS Productcag ON "Productsub".[ProductCategoryID] = "Productcag".[ProductCategoryID]
