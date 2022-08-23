@@ -21,16 +21,16 @@ FROM, JOIN, WHERE, GROUP BY, HAVING, SELECT, ORDER BY 
 I assume all columns mentioned in the question need to be in the output.
 *\
 
-SELECT TOP (1000) 
-[PurchaseOrderDetail].[PurchaseOrderID], 
-[PurchaseOrderDetail].[PurchaseOrderDetailID], 
-[PurchaseOrderDetail].[OrderQty], 
-[PurchaseOrderDetail].[UnitPrice], 
-[PurchaseOrderDetail].[LineTotal], 
-"orderhead".[OrderDate], 
-"Product".[Name], 
-"Productsub".[Name],
-"productcag".[Name]
+SELECT TOP (1000)
+[PurchaseOrderDetail].[PurchaseOrderID],
+[PurchaseOrderDetail].[PurchaseOrderDetailID],
+[PurchaseOrderDetail].[OrderQty],
+[PurchaseOrderDetail].[UnitPrice],
+[PurchaseOrderDetail].[LineTotal],
+("orderhead".[OrderDate]),
+ISNULL("Product".[Name], 'None'),
+ISNULL("Productsub".[Name], 'None'),
+ISNULL("productcag".[Name], 'None')
 FROM [AdventureWorks2019].[Purchasing].[PurchaseOrderDetail]
 
 -- Joins
