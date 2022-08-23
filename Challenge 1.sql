@@ -21,6 +21,9 @@ FROM, JOIN, WHERE, GROUP BY, HAVING, SELECT, ORDER BY 
 I assume all columns mentioned in the question need to be in the output.
 *\
 
+USE AdventureWorks2019;  
+GO  
+
 SELECT TOP (1000)
 [PurchaseOrderDetail].[PurchaseOrderID],
 [PurchaseOrderDetail].[PurchaseOrderDetailID],
