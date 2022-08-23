@@ -30,14 +30,17 @@ SELECT TOP (1000)
 [PurchaseOrderDetail].[OrderQty],
 [PurchaseOrderDetail].[UnitPrice],
 [PurchaseOrderDetail].[LineTotal],
-("orderhead".[OrderDate]),
-ISNULL("Product".[Name], 'None'),
-ISNULL("Productsub".[Name], 'None'),
-ISNULL("productcag".[Name], 'None')
+MONTH("orderhead".[OrderDate]) [Month],
+ISNULL("Product".[Name], 'None') [Product Name],
+ISNULL("Productsub".[Name], 'None') [Sub Category],
+ISNULL("productcat".[Name], 'None') [Product Category]
+-- Insert CASE column
 FROM [AdventureWorks2019].[Purchasing].[PurchaseOrderDetail]
 
 -- Joins
 INNER JOIN [Purchasing].[PurchaseOrderHeader] AS "Orderhead" ON [PurchaseOrderDetail].[PurchaseOrderID] = "Orderhead".[PurchaseOrderID]
 INNER JOIN [Production].[Product] AS "Product" ON [PurchaseOrderDetail].[ProductID] = "Product".[ProductID]
 LEFT Outer Join [Production].[ProductSubcategory] AS "Productsub" ON "Productsub".ProductSubcategoryID = "Product".[ProductID]
-RIGHT OUTER JOIN [Production].[ProductCategory] AS Productcag ON "Productsub".[ProductCategoryID] = "Productcag".[ProductCategoryID]
+RIGHT OUTER JOIN [Production].[ProductCategory] AS Productcat ON "Productsub".[ProductCategoryID] = "Productcat".[ProductCategoryID]
+
+-- Apply criteria using a view
