@@ -1,4 +1,3 @@
-
 # Summarized Instructions 
 /* 
 Use Columns: [Purchasing].[PurchaseOrderDetail].[PurchaseOrderID], [Purchasing].[PurchaseOrderDetail].[PurchaseOrderDetailID], 
@@ -17,7 +16,7 @@ Production.ProductSubcategory & Production.Product should show nulls when joinin
 Production.ProductCategory & Production.ProductSubcategory should show nulls when joining. (Left Outer Join) 
 *\ 
 
-# Layout Diagram
+# Layout
 /*
 Data dictonary for Adventure Works DB: 
 https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-2008/ms124438(v=sql.100)?redirectedfrom=MSDN
@@ -27,7 +26,7 @@ FROM, JOIN, WHERE, GROUP BY, HAVING, SELECT, ORDER BY 
 I assume all columns mentioned in the question need to be in the output.
 *\
 
-# Creating the View
+# Creating View
 USE AdventureWorks2019;  
 GO  
 
