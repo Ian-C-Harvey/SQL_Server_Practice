@@ -26,7 +26,7 @@ FROM, JOIN, WHERE, GROUP BY, HAVING, SELECT, ORDER BY 
 I assume all columns mentioned in the question need to be in the output.
 *\
 
--- # Creating the View
+# Creating the View
 USE AdventureWorks2019;  
 GO  
 
