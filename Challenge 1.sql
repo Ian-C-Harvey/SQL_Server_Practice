@@ -1,4 +1,4 @@
-#Summarized Instructions
+# Summarized Instructions
 /* Use Columns: [Purchasing].[PurchaseOrderDetail].[PurchaseOrderID], [Purchasing].[PurchaseOrderDetail].[PurchaseOrderDetailID], 
 [Purchasing].[PurchaseOrderDetail].[OrderQty], [Purchasing].[PurchaseOrderDetail].[UnitPrice], 
 [Purchasing].[PurchaseOrderDetail].[LineTotal], [Purchasing].[PurchaseOrderHeader].[OrderDate], [Production].[Product].[Name], 
