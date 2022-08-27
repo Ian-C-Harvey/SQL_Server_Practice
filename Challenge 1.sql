@@ -26,27 +26,36 @@ FROM, JOIN, WHERE, GROUP BY, HAVING, SELECT, ORDER BY 
 I assume all columns mentioned in the question need to be in the output.
 *\
 
-# Creating View
+-- Ensuring the correct database
 USE AdventureWorks2019;  
 GO  
 
-SELECT TOP (1000)
+-- Creating the view
+CREATE VIEW VPurchaseDetails AS
+SELECT
 [PurchaseOrderDetail].[PurchaseOrderID],
 [PurchaseOrderDetail].[PurchaseOrderDetailID],
 [PurchaseOrderDetail].[OrderQty],
 [PurchaseOrderDetail].[UnitPrice],
 [PurchaseOrderDetail].[LineTotal],
-MONTH("orderhead".[OrderDate]) [Month],
+"orderhead".[OrderDate] [Date],
+MONTH("orderhead".[OrderDate]) [Month Number],
 ISNULL("Product".[Name], 'None') [Product Name],
 ISNULL("Productsub".[Name], 'None') [Sub Category],
-ISNULL("productcat".[Name], 'None') [Product Category]
--- Insert CASE column
-FROM [AdventureWorks2019].[Purchasing].[PurchaseOrderDetail]
+ISNULL("productcat".[Name], 'None') [Product Category],
+CASE 
+	WHEN [PurchaseOrderDetail].[OrderQty] > 500 THEN 'Large'
+	WHEN [PurchaseOrderDetail].[OrderQty] > 500 THEN 'Medium'
+	Else 'Small' END AS 'OrderSizeCategory'
 
--- Joins
+--joins
+FROM [AdventureWorks2019].[Purchasing].[PurchaseOrderDetail]
 INNER JOIN [Purchasing].[PurchaseOrderHeader] AS "Orderhead" ON [PurchaseOrderDetail].[PurchaseOrderID] = "Orderhead".[PurchaseOrderID]
 INNER JOIN [Production].[Product] AS "Product" ON [PurchaseOrderDetail].[ProductID] = "Product".[ProductID]
 LEFT Outer Join [Production].[ProductSubcategory] AS "Productsub" ON "Productsub".ProductSubcategoryID = "Product".[ProductID]
 RIGHT OUTER JOIN [Production].[ProductCategory] AS Productcat ON "Productsub".[ProductCategoryID] = "Productcat".[ProductCategoryID]
+GO
 
--- Apply criteria using a view
+-- Using the View
+SELECT * FROM VPurchaseDetails
+WHERE [Month Number] = 12;
