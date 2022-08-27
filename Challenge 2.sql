@@ -1,1 +1,1 @@
-
+-- Summarized Instructions
