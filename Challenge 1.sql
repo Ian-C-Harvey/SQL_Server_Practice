@@ -30,7 +30,7 @@ I assume all columns mentioned in the question need to be in the output.
 USE AdventureWorks2019;  
 GO  
 
--- Creating the view
+-- Creating the View
 CREATE VIEW VPurchaseDetails AS
 SELECT
 [PurchaseOrderDetail].[PurchaseOrderID],
@@ -48,7 +48,7 @@ CASE
 	WHEN [PurchaseOrderDetail].[OrderQty] > 500 THEN 'Medium'
 	Else 'Small' END AS 'OrderSizeCategory'
 
---joins
+-- Joins
 FROM [AdventureWorks2019].[Purchasing].[PurchaseOrderDetail]
 INNER JOIN [Purchasing].[PurchaseOrderHeader] AS "Orderhead" ON [PurchaseOrderDetail].[PurchaseOrderID] = "Orderhead".[PurchaseOrderID]
 INNER JOIN [Production].[Product] AS "Product" ON [PurchaseOrderDetail].[ProductID] = "Product".[ProductID]
