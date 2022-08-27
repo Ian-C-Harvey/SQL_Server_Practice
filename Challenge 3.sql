@@ -1,0 +1,2 @@
+-- Decided to skip challenge 2, it only involved UNION.
+-- Summarized Instructions
