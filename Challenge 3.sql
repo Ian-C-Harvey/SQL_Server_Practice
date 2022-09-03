@@ -25,7 +25,13 @@ FROM [Person].[Person]
 		ON [State].[CountryRegionCode] = [Country].[CountryRegionCode]
 
 -- Criteria
-WHERE [Bussiness Address] .[BusinessEntityID] IN (SELECT 
+WHERE [Bussiness Address] .[BusinessEntityID] IN 
+	(SELECT [Person].[Person].[PersonType], [Address].[PostalCode] FROM [Person].[Person]
+	INNER JOIN [Person].[BusinessEntityAddress] AS [Bussiness Address] 
+		ON [Person].[Person].[BusinessEntityID] = [Bussiness Address].BusinessEntityID 
+	INNER JOIN [Person].[Address] AS [Address] 
+		ON [Bussiness Address].[AddressID] = [Address].[AddressID]
+	WHERE 
 
 /* 
 -- Filter requirements: 
@@ -35,4 +41,4 @@ WHERE [Bussiness Address] .[BusinessEntityID] IN (SELECT
   -- Join Person.Address to Person.BusinessEntityAddress. 
   -- Join "State" to "Address" 
   -- Join Person.CountryRegion to Person.StateProvince. 
-*\ 
+*\
