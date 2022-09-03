@@ -24,14 +24,14 @@ FROM [Person].[Person]
 	INNER JOIN [Person].[CountryRegion] [Country] 
 		ON [State].[CountryRegionCode] = [Country].[CountryRegionCode]
 
--- Criteria
+-- Criteria With Subquery
 WHERE [Bussiness Address] .[BusinessEntityID] IN 
-	(SELECT [Person].[Person].[PersonType], [Address].[PostalCode] FROM [Person].[Person]
+	(SELECT [Person].[Person].[PersonType] AS [Person Type], [Address].[PostalCode] AS [Postal Code] FROM [Person].[Person]
 	INNER JOIN [Person].[BusinessEntityAddress] AS [Bussiness Address] 
 		ON [Person].[Person].[BusinessEntityID] = [Bussiness Address].BusinessEntityID 
 	INNER JOIN [Person].[Address] AS [Address] 
 		ON [Bussiness Address].[AddressID] = [Address].[AddressID]
-	WHERE 
+	WHERE [Person Type] = "SP" OR [Postal Code]
 
 /* 
 -- Filter requirements: 
