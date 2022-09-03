@@ -2,7 +2,7 @@
 SELECT  
 	[Bussiness Address] .[BusinessEntityID] AS [Business ID],  
 	[Person].[Person].[PersonType], 
-	CONCAT([Person].[FirstName], ' ', ISNULL([MiddleN],''), ' ', [Person].[Lastname]) AS "Full Name",
+	CONCAT([Person].[FirstName], ' ', ISNULL([MiddleName],''), ' ', [Person].[Lastname]) AS "Full Name",
 	[Address].[AddressLine1] AS [Address], 
 	[Address].[City], 
 	[Address].[PostalCode], 
@@ -21,7 +21,7 @@ FROM [Person].[Person]
 		ON [State].[CountryRegionCode] = [Country].[CountryRegionCode]
 
 -- Criteria with Subquery
-WHERE [Bussiness Address] .[BusinessEntityID] IN 
+WHERE EXISTS
 	(SELECT * 
 	FROM [Person].[Person]
 		INNER JOIN [Person].[BusinessEntityAddress] AS [Bussiness Address] 
@@ -32,7 +32,7 @@ WHERE [Bussiness Address] .[BusinessEntityID] IN
 			ON [Address].[StateProvinceID] = [State].[StateProvinceID]
 		INNER JOIN [Person].[CountryRegion] [Country] 
 			ON [State].[CountryRegionCode] = [Country].[CountryRegionCode]
-	WHERE ([Person].[Person].[PersonType] = 'SP' OR ([Address].[PostalCode] LIKE '9%' AND LEN([Address].[PostalCode]) = 5) AND ([Country].[Name] = 'United States'))
+	WHERE ([Person].[Person].[PersonType] = 'SP' OR [Address].[PostalCode] LIKE '9%') AND (LEN([Address].[PostalCode]) = 5 AND [Country].[Name] Like 'United%'));
 	-- All of the joins had to be added so I could use Country in the criteria.
 	-- Added subquery for practice.
 
@@ -41,4 +41,4 @@ WHERE [Bussiness Address] .[BusinessEntityID] IN
   -- Join Person.BusinessEntityAddress to Person.Person 
   -- Join Person.Address to Person.BusinessEntityAddress. 
   -- Join "State" to "Address" 
-  -- Join Person.CountryRegion to Person.StateProvince. 
+  -- Join Person.CountryRegion to Person.StateProvince.
