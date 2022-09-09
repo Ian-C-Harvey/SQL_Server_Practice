@@ -1,3 +1,10 @@
+-- Summarized Instructions:
+  -- Person Type = "SP" or postal code begins with 9 and is exactly 5 characters and country is "United states" 
+  -- Join Person.BusinessEntityAddress to Person.Person 
+  -- Join Person.Address to Person.BusinessEntityAddress. 
+  -- Join "State" to "Address" 
+  -- Join Person.CountryRegion to Person.StateProvince.
+
 -- Output
 SELECT  
 	[Bussiness Address] .[BusinessEntityID] AS [Business ID],  
@@ -35,10 +42,3 @@ WHERE EXISTS
 	WHERE ([Person].[Person].[PersonType] = 'SP' OR [Address].[PostalCode] LIKE '9%') AND (LEN([Address].[PostalCode]) = 5 AND [Country].[Name] Like 'United%'));
 	-- All of the joins had to be added so I could use Country in the criteria.
 	-- Added subquery for practice.
-
--- Filter requirements: 
-  -- Person Type = "SP" or postal code begins with 9 and is exactly 5 characters and country is "United states" 
-  -- Join Person.BusinessEntityAddress to Person.Person 
-  -- Join Person.Address to Person.BusinessEntityAddress. 
-  -- Join "State" to "Address" 
-  -- Join Person.CountryRegion to Person.StateProvince.
