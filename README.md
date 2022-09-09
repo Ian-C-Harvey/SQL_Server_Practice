@@ -6,4 +6,4 @@ The challange questions are a summarized version of the Udemy course questions. 
 
 Course Link: https://www.udemy.com/course/sql-basics-crash-course-with-sql-server/
 
-Other Resources: https://sqlbolt.com/ & https://sqlzoo.net/wiki/SQL_Tutorial & https://docs.microsoft.com/en-us/sql/t-sql/language-reference?view=sql-server-ver16
+Other Resources I recommend: https://sqlbolt.com/ & https://sqlzoo.net/wiki/SQL_Tutorial & https://docs.microsoft.com/en-us/sql/t-sql/language-reference?view=sql-server-ver16
