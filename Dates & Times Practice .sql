@@ -12,3 +12,5 @@
     Recommend using new lines to keep track of parentheses
     Everything should be dynamic.
 *\
+    
+    SELECT GETDATE()
