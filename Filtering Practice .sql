@@ -1,9 +1,11 @@
 -- Summarized Instructions:
-  -- Person Type = "SP" or postal code begins with 9 and is exactly 5 characters and country is "United states" 
-  -- Join Person.BusinessEntityAddress to Person.Person 
-  -- Join Person.Address to Person.BusinessEntityAddress. 
-  -- Join "State" to "Address" 
-  -- Join Person.CountryRegion to Person.StateProvince.
+/*
+	Person Type = "SP" or postal code begins with 9 and is exactly 5 characters and country is "United states" 
+	Join Person.BusinessEntityAddress to Person.Person 
+	Join Person.Address to Person.BusinessEntityAddress. 
+	Join "State" to "Address" 
+	Join Person.CountryRegion to Person.StateProvince.
+*\
 
 -- Output
 SELECT  
