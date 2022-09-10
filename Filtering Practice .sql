@@ -1,5 +1,6 @@
 -- Summarized Instructions:
 /*
+	Column names for SELECT where given.
 	Person Type = "SP" or postal code begins with 9 and is exactly 5 characters and country is "United states" 
 	Join Person.BusinessEntityAddress to Person.Person 
 	Join Person.Address to Person.BusinessEntityAddress. 
