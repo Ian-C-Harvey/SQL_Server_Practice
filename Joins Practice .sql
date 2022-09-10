@@ -1,9 +1,6 @@
 -- Summarized Instructions 
 /* 
-Use Columns: [Purchasing].[PurchaseOrderDetail].[PurchaseOrderID], [Purchasing].[PurchaseOrderDetail].[PurchaseOrderDetailID], 
-[Purchasing].[PurchaseOrderDetail].[OrderQty], [Purchasing].[PurchaseOrderDetail].[UnitPrice], 
-[Purchasing].[PurchaseOrderDetail].[LineTotal], [Purchasing].[PurchaseOrderHeader].[OrderDate], [Production].[Product].[Name], 
-[Production].[ProductSubcategory].[Name], [Production].[ProductCategory].[Name]
+Names of Columns for SELECT are given in the instructions.
 Requirement for the new “OrderSizeCategory” to be calculated: (CASE WHEN)
   OrderQty > 500, “Large”
   OrderQty > 50 but <= 500, “Medium”
