@@ -2,7 +2,7 @@
 
 # Info
 
-The challange questions are a summarized version of the Udemy course questions. I also add additonal code for practice to my anwsers. All of them use AdventureWorksDB.
+The challange questions are a summarized version of the Udemy course questions. I also add additonal code for practice to my anwsers. All of them use AdventureWorksDB. The course covers grouping and aggregate functions but none of the challange questions use it.
 
 Course Link: https://www.udemy.com/course/sql-basics-crash-course-with-sql-server/
 
