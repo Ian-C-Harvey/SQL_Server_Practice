@@ -1,1 +1,12 @@
-
+– Summarized Instructions
+/*
+Columns to use:
+– Column: FirstName and LastName Table: Person.Person table
+– Column: JobTitle, Table: HumanResources.Employee
+– Column: Rate, Table: HumanResources.EmployeePayHistory table
+– Derived Column: "AverageRate" average all values in rate column
+– Derived Column: "MaximumRate" repeats the largest value in the rate column on all rows
+– Derived Column: "DiffFromAvgRate" employees's pay rate - the average of all values in the rate column.
+– Derived Column: "PercentofMaxRate" employees's pay rate / the maximum of all values in the rate column x 100.
+– All tables joinable to BusinessEntityID, use Inner Join
+*/
