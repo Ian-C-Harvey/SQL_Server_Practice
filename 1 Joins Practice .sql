@@ -11,7 +11,7 @@ Purchasing.PurchaseOrderDetail & Purchasing.PurchaseOrderHeader should match whe
 Production.Product & Purchasing.PurchaseOrderDetail should match when joining. (Inner Join)
 Production.ProductSubcategory & Production.Product should show nulls when joining. (Left Outer Join)
 Production.ProductCategory & Production.ProductSubcategory should show nulls when joining. (Left Outer Join) 
-*\ 
+*/
 
 -- Layout
 /*
@@ -21,7 +21,7 @@ No entity relationship diagram provided.
 SQL Order of Operations: 
 FROM, JOIN, WHERE, GROUP BY, HAVING, SELECT, ORDER BY 
 I assume all columns mentioned in the question need to be in the output.
-*\
+*/
 
 -- Ensuring the correct database
 USE AdventureWorks2019;  
