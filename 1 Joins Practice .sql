@@ -26,26 +26,26 @@ SELECT
 [PurchaseOrderDetail].[OrderQty],
 [PurchaseOrderDetail].[UnitPrice],
 [PurchaseOrderDetail].[LineTotal],
-"orderhead".[OrderDate] [Date],
-MONTH("orderhead".[OrderDate]) [Month Number],
-ISNULL("Product".[Name], 'None') [Product Name],
-ISNULL("Productsub".[Name], 'None') [Sub Category],
-ISNULL("productcat".[Name], 'None') [Product Category],
+[orderhead].[OrderDate] [Date],
+MONTH([orderhead].[OrderDate]) [Month Number],
+ISNULL([Product].[Name], 'None') [Product Name],
+ISNULL([Productsub].[Name], 'None') [Sub Category],
+ISNULL([productcat].[Name], 'None') [Product Category],
 CASE 
 	WHEN [PurchaseOrderDetail].[OrderQty] > 500 THEN 'Large'
 	WHEN [PurchaseOrderDetail].[OrderQty] > 500 THEN 'Medium'
 	Else 'Small' END AS 'OrderSizeCategory'
 
 -- Joins
-FROM [AdventureWorks2019].[Purchasing].[PurchaseOrderDetail]
-INNER JOIN [Purchasing].[PurchaseOrderHeader] AS "Orderhead" 
-	ON [PurchaseOrderDetail].[PurchaseOrderID] = "Orderhead".[PurchaseOrderID]
-INNER JOIN [Production].[Product] AS "Product" 
-	ON [PurchaseOrderDetail].[ProductID] = "Product".[ProductID]
-LEFT Outer Join [Production].[ProductSubcategory] AS "Productsub" 
-	ON "Productsub".ProductSubcategoryID = "Product".[ProductID]
+FROM [Purchasing].[PurchaseOrderDetail]
+INNER JOIN [Purchasing].[PurchaseOrderHeader] AS [Orderhead] 
+	ON [PurchaseOrderDetail].[PurchaseOrderID] = [Orderhead].[PurchaseOrderID]
+INNER JOIN [Production].[Product] AS [Product] 
+	ON [PurchaseOrderDetail].[ProductID] = [Product].[ProductID]
+LEFT Outer Join [Production].[ProductSubcategory] AS [Productsub] 
+	ON [Productsub].ProductSubcategoryID = [Product].[ProductID]
 RIGHT OUTER JOIN [Production].[ProductCategory] AS Productcat 
-	ON "Productsub".[ProductCategoryID] = "Productcat".[ProductCategoryID]
+	ON [Productsub].[ProductCategoryID] = [Productcat].[ProductCategoryID]
 GO
 
 -- Using the View
