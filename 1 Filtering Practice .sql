@@ -6,7 +6,7 @@ Join Person.BusinessEntityAddress to Person.Person
 Join Person.Address to Person.BusinessEntityAddress. 
 Join "State" to "Address" 
 Join Person.CountryRegion to Person.StateProvince.
-*\
+*/
 
 -- Output
 SELECT  
