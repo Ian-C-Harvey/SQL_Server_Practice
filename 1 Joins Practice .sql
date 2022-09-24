@@ -13,12 +13,13 @@ Production.ProductSubcategory & Production.Product should show nulls when joinin
 Production.ProductCategory & Production.ProductSubcategory should show nulls when joining. (Left Outer Join) 
 */
 
--- Ensuring the correct database
+-- Selecting Database
 USE AdventureWorks2019;  
 GO  
 
 -- Creating the View
-CREATE VIEW VPurchaseDetails AS
+CREATE OR ALTER VIEW VPurchaseDetails
+AS
 SELECT
 [PurchaseOrderDetail].[PurchaseOrderID],
 [PurchaseOrderDetail].[PurchaseOrderDetailID],
@@ -37,10 +38,14 @@ CASE
 
 -- Joins
 FROM [AdventureWorks2019].[Purchasing].[PurchaseOrderDetail]
-INNER JOIN [Purchasing].[PurchaseOrderHeader] AS "Orderhead" ON [PurchaseOrderDetail].[PurchaseOrderID] = "Orderhead".[PurchaseOrderID]
-INNER JOIN [Production].[Product] AS "Product" ON [PurchaseOrderDetail].[ProductID] = "Product".[ProductID]
-LEFT Outer Join [Production].[ProductSubcategory] AS "Productsub" ON "Productsub".ProductSubcategoryID = "Product".[ProductID]
-RIGHT OUTER JOIN [Production].[ProductCategory] AS Productcat ON "Productsub".[ProductCategoryID] = "Productcat".[ProductCategoryID]
+INNER JOIN [Purchasing].[PurchaseOrderHeader] AS "Orderhead" 
+	ON [PurchaseOrderDetail].[PurchaseOrderID] = "Orderhead".[PurchaseOrderID]
+INNER JOIN [Production].[Product] AS "Product" 
+	ON [PurchaseOrderDetail].[ProductID] = "Product".[ProductID]
+LEFT Outer Join [Production].[ProductSubcategory] AS "Productsub" 
+	ON "Productsub".ProductSubcategoryID = "Product".[ProductID]
+RIGHT OUTER JOIN [Production].[ProductCategory] AS Productcat 
+	ON "Productsub".[ProductCategoryID] = "Productcat".[ProductCategoryID]
 GO
 
 -- Using the View
