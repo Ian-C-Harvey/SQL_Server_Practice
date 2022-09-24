@@ -7,7 +7,7 @@
       Plug in the YEAR() and MONTH() of Today's date into DATEFROMPARTS() to get the first day of the month
       DATEADD to add 1 month to the previous step
       DATEADD  to subtract 1 day
-*\
+*/
     
    SELECT 
 	GETDATE() [Today],
