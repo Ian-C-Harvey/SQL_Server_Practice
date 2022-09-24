@@ -10,19 +10,19 @@ Join Person.CountryRegion to Person.StateProvince.
 
 -- Output
 SELECT  
-[Bussiness Address].[BusinessEntityID] AS [Business ID],  
+[Bussiness Address].[BusinessEntityID] [Business ID],  
 [Person].[Person].[PersonType], 
-CONCAT([Person].[FirstName], ' ', ISNULL([MiddleName],''), ' ', [Person].[Lastname]) AS "Full Name",
-[Address].[AddressLine1] AS [Address], 
+CONCAT([Person].[FirstName], ' ', ISNULL([MiddleName],''), ' ', [Person].[Lastname]) [Full Name],
+[Address].[AddressLine1] [Address], 
 [Address].[City], 
 [Address].[PostalCode], 
-[State].[Name] AS [State], 
-[Country].[Name] AS [Country]
+[State].[Name] [State], 
+[Country].[Name] [Country]
 
 -- Joins
 FROM [Person].[Person]
 INNER JOIN [Person].[BusinessEntityAddress] AS [Bussiness Address] 
-	ON [Person].[Person].[BusinessEntityID] = [Bussiness Address].BusinessEntityID 
+	ON [Person].[Person].[BusinessEntityID] = [Bussiness Address].[BusinessEntityID] 
 INNER JOIN [Person].[Address] AS [Address] 
 	ON [Bussiness Address].[AddressID] = [Address].[AddressID]
 INNER JOIN [Person].[StateProvince] AS [State]
