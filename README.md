@@ -2,7 +2,9 @@
 
 # Info
 
-The questions used for practice are a summarized version of the Udemy course questions, all questions use AdventureWorksDB2019. I also add additonal code for practice.
+The questions used for practice are a summarized version of the Udemy course questions. I add additonal code for practice.
+
+Database: https://learn.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-ver16&tabs=ssms
 
 Course Link 1: https://www.udemy.com/course/sql-basics-crash-course-with-sql-server/  
 
