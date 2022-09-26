@@ -8,6 +8,10 @@ Join "State" to "Address"
 Join Person.CountryRegion to Person.StateProvince.
 */
 
+-- Selecting Database
+USE AdventureWorks2019;  
+GO  
+
 -- Output
 SELECT  
 [Bussiness Address].[BusinessEntityID] [Business ID],  
