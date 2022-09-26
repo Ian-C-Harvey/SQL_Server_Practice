@@ -11,3 +11,7 @@ Columns to use:
 – Derived Column: "PercentofMaxRate" employees's pay rate / the maximum of all values in the rate column x 100.
 – All tables joinable to BusinessEntityID, use Inner Join
 */
+
+-- Selecting Database
+USE AdventureWorks2019;  
+GO  
