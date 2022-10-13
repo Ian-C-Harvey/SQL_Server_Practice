@@ -1,1 +1,21 @@
+IF NOT EXISTS (SELECT name FROM master.sys.databases WHERE name = N'TestDB')
+Begin
+CREATE DATABASE TestDB;
+END
+-- Checking to see if the database exist.
 
+IF NOT EXISTS (SELECT * FROM sys.schemas WHERE name = 'HumanResources')
+BEGIN
+EXEC('CREATE SCHEMA HumanResources')
+END
+-- Checking to see if the SCHEMA exist and creating it.
+
+/*
+IF NOT EXISTS (SELECT * 
+                 FROM INFORMATION_SCHEMA.TABLES 
+                 WHERE TABLE_SCHEMA = 'HumanResources' 
+                 AND TABLE_NAME = 'Employees')
+BEGIN
+CREATE Table [TestDB].[HumanResources].[Employees] ()
+END
+*/
