@@ -26,6 +26,8 @@ Name Text
 );
 END
 
+IF NOT EXISTS (SELECT * FROM HumanResources.Employees HAVING COUNT(*) > 0)
+BEGIN
 INSERT INTO [TestDB].[HumanResources].[Employees] 
 	([Employeeid], [Salary], [Name]) 
 	VALUES (19456, 50000, 'John Doe')
@@ -35,3 +37,4 @@ INSERT INTO [TestDB].[HumanResources].[Employees]
 	VALUES (19799, 53000, 'Arnold Baggins')
 INSERT INTO [TestDB].[HumanResources].[Employees] 
 	VALUES (19861, 55675, 'Matt Hickens')
+END
