@@ -38,3 +38,7 @@ INSERT INTO [TestDB].[HumanResources].[Employees]
 INSERT INTO [TestDB].[HumanResources].[Employees] 
 	VALUES (19861, 55675, 'Matt Hickens')
 END
+
+TRUNCATE TABLE HumanResources.Employees
+UPDATE HumanResources.Employees SET Name = NULL WHERE LEN(Salary) > 1
+DROP TABLE HumanResources.Employees
