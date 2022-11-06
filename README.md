@@ -10,4 +10,4 @@ Course Link 1: https://www.udemy.com/course/sql-basics-crash-course-with-sql-ser
 
 Course Link 2: https://www.udemy.com/course/advanced-sql-server-masterclass-for-data-analysis/
 
-Other Resources I recommend: https://sqlbolt.com/ & https://sqlzoo.net/wiki/SQL_Tutorial & https://docs.microsoft.com/en-us/sql/t-sql/language-reference?view=sql-server-ver16
+Other resources I recommend: https://sqlbolt.com/ & https://sqlzoo.net/wiki/SQL_Tutorial & https://docs.microsoft.com/en-us/sql/t-sql/language-reference?view=sql-server-ver16
